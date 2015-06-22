@@ -66,6 +66,7 @@
 				var success = function(uid) {
 					User.setUserField(uid, 'githubid', githubID);
 					db.setObjectField('githubid:uid', githubID, uid);
+					User.setUserField(uid, 'email:confirmed', 1);
 					callback(null, {
 						uid: uid
 					});
